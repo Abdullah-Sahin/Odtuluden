@@ -1,8 +1,13 @@
 package com.Odtuluden.Helper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import com.Odtuluden.GUI.CourseGUI;
+import com.Odtuluden.Model.Course;
+import com.Odtuluden.UserModel.User;
+
+import java.io.*;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DBConnection {
 

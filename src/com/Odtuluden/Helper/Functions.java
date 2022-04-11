@@ -1,8 +1,10 @@
 package com.Odtuluden.Helper;
 
+import com.Odtuluden.UserModel.Admin;
+
 import javax.swing.*;
-import javax.tools.Tool;
 import java.awt.*;
+import java.util.Objects;
 
 public class Functions {
 
@@ -29,5 +31,22 @@ public class Functions {
                 break;
             }
         }
+    }
+
+    public static boolean checkPassword(String eMail, String pass){
+
+        if(Admin.getUserByEmail(eMail) == null){
+            Functions.showMessage("Bu mail adresine ait bir kullanıcı bulunmamaktadır");
+            return false;
+        }
+        else{
+            if(Objects.requireNonNull(Admin.getUserByEmail(eMail)).getPassword().equals(pass))
+                return true;
+            else{
+                showMessage("Şifre yanlış");
+                return false;
+            }
+        }
+
     }
 }

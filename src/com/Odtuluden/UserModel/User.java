@@ -11,11 +11,32 @@ public class User {
     public User(){
 
     }
+    public User(int id, String fullName, String email, String password, String type) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email  = email;
+        this.password = password;
+        this.type = type;
+    }
+
+    public User(int id, String fullName, String email, String password) {
+        this.id = id;
+        this.fullName = fullName;
+        this.email  = email;
+        this.password = password;
+        this.type = "Bilgi Yok";
+    }
+
     public User(String fullName, String email, String password, String type) {
         this.fullName = fullName;
         this.email  = email;
         this.password = password;
         this.type = type;
+    }
+    public User(String fullName, String email, String password) {
+        this.fullName = fullName;
+        this.email  = email;
+        this.password = password;
     }
 
     public String getEmail() {
@@ -56,5 +77,16 @@ public class User {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", type='" + type + '\'' +
+                '}';
     }
 }

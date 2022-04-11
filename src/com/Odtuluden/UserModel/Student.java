@@ -1,10 +1,30 @@
 package com.Odtuluden.UserModel;
 
-import com.Odtuluden.Interfaces.IStudent;
+import com.Odtuluden.Model.Course;
 
-public class Student extends User implements IStudent {
+import java.util.List;
 
-    public Student(String fullName, String email, String password, String type) {
-        super(fullName, email, password, type);
+public class Student extends User{
+
+    public Student(String fullName, String email, String password) {
+        super(fullName, email, password);
+        setType("öğrenci");
+    }
+
+    public Student(int id, String fullName, String email, String password) {
+        super(id, fullName, email, password);
+        setType("öğrenci");
+    }
+
+    // STUDENT METHODS STARTED
+
+    public static String studyCourseByName(String courseName) {
+
+        for(Course course: Teacher.getAllCourses()){
+            if(course.getCourseName().equals(courseName)){
+                return course.getCourseContent();
+            }
+        }
+        return null;
     }
 }
